@@ -16,13 +16,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // テキストの変更
-        self.label.text = "Hello"
+        var str = ""
+        str = "Hello Swift"
+        self.label.text = str
         
     }
     
     @IBAction func pressButton(_ sender: Any) {
         
         //Buttonクリックでテキストの変更
+        //Buttonのクリックで文字色の変更
         self.label.text = "ボタンを押しました"
         self.label.textColor = UIColor.red
     }
