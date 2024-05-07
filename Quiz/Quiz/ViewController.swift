@@ -1,22 +1,28 @@
+
 //
 //  ViewController.swift
-//  Quiz
+//  aaa
 //
-//  Created by spark-06 on 2024/04/25.
+//  Created by spark-06 on 2024/05/07.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var label: UILabel!
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     //下記の右辺はクラスと呼ばれる
+=======
+    @IBOutlet weak var nameTextField: UITextField!
+>>>>>>> develop
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+<<<<<<< HEAD
 
     }
 =======
@@ -38,7 +44,22 @@ class ViewController: UIViewController {
     
     @IBAction func pressButton(_ sender: Any) {
 
+=======
+>>>>>>> develop
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let quizViewController = segue.destination as? QuizViewController {
+            if let text = self.nameTextField.text {
+                quizViewController.nameText = text
+            }
+        }
+    }
+
+    @IBAction func pressButton(_ sender: Any) {
+
+    }
+
+
 }
 
