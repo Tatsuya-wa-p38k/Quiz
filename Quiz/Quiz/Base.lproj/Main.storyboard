@@ -28,7 +28,7 @@
         <!--最初の画面-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="最初の画面" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="最初の画面" id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
