@@ -99,7 +99,7 @@
                                 <rect key="frame" x="234" y="299" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhJ-5w-8by">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhJ-5w-8by" customClass="QuizCard" customModule="Quiz" customModuleProvider="target">
                                 <rect key="frame" x="56.666666666666657" y="286" width="280" height="280"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lsd-3o-fdq">
@@ -136,6 +136,11 @@
                                     <constraint firstItem="Lsd-3o-fdq" firstAttribute="centerX" secondItem="nhJ-5w-8by" secondAttribute="centerX" id="nRR-Ze-6Sm"/>
                                     <constraint firstAttribute="bottom" secondItem="9fg-EQ-ISE" secondAttribute="bottom" constant="16" id="z1N-N4-7PH"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="iconImageView" destination="Lsd-3o-fdq" id="A1i-do-GFU"/>
+                                    <outlet property="quizImageView" destination="2kg-d4-eVF" id="0TV-09-xb7"/>
+                                    <outlet property="quizLabel" destination="9fg-EQ-ISE" id="tfq-uD-DSq"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-tz-9Gs">
                                 <rect key="frame" x="16" y="195.33333333333334" width="361" height="40.666666666666657"/>
@@ -159,6 +164,7 @@
                     <navigationItem key="navigationItem" id="yaN-mh-IZD"/>
                     <connections>
                         <outlet property="label" destination="T8Q-tz-9Gs" id="Ob3-ud-Hs7"/>
+                        <outlet property="quizCard" destination="nhJ-5w-8by" id="OOQ-Jc-PtN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDk-OY-6m9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
