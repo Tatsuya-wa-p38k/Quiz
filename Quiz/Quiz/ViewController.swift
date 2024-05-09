@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     }
 =======
@@ -45,6 +46,9 @@ class ViewController: UIViewController {
     @IBAction func pressButton(_ sender: Any) {
 
 =======
+>>>>>>> develop
+=======
+
 >>>>>>> develop
     }
 
