@@ -12,9 +12,8 @@
         <!--Navigation Controller-->
         <scene sceneID="8SZ-pv-B1U">
             <objects>
-                <navigationController id="moB-Bp-0Jm" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="moB-Bp-0Jm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0w0-qb-0Xt">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -39,8 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSn-D1-KVF">
-                                <rect key="frame" x="32" y="445" width="238" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSn-D1-KVF">
+                                <rect key="frame" x="32" y="445" width="258.33333333333331" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0iu-x2-gHc"/>
@@ -50,15 +49,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcq-MA-SvM">
-                                <rect key="frame" x="286" y="445" width="75" height="30"/>
+                                <rect key="frame" x="306.33333333333331" y="445" width="54.666666666666686" height="30"/>
                                 <color key="backgroundColor" name="right color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Lqb-rK-uM1"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain" title="次へ">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZoR-Oj-3Hd"/>
                                     <segue destination="Y5v-t8-qaL" kind="show" id="osL-OM-C7w"/>
@@ -165,6 +170,7 @@
                     <connections>
                         <outlet property="label" destination="T8Q-tz-9Gs" id="Ob3-ud-Hs7"/>
                         <outlet property="quizCard" destination="nhJ-5w-8by" id="OOQ-Jc-PtN"/>
+                        <segue destination="K8G-UI-Aei" kind="show" identifier="goToResult" id="l9V-Gk-nPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDk-OY-6m9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,7 +180,7 @@
         <!--結果画面-->
         <scene sceneID="10S-JJ-Ren">
             <objects>
-                <viewController title="結果画面" id="K8G-UI-Aei" sceneMemberID="viewController">
+                <viewController title="結果画面" id="K8G-UI-Aei" customClass="ResultViewController" customModule="Quiz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oQz-mu-P75">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +211,18 @@
                                     <constraint firstAttribute="height" constant="30" id="4FX-Yr-stq"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="もう一度チャレンジする">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushResultButton:" destination="K8G-UI-Aei" eventType="touchUpInside" id="53r-DX-wGS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sJr-8M-Eev"/>
@@ -223,6 +240,11 @@
                             <constraint firstItem="aSb-DH-pVL" firstAttribute="centerX" secondItem="oQz-mu-P75" secondAttribute="centerX" id="tf5-Kq-sgj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iQN-Rd-okn"/>
+                    <connections>
+                        <outlet property="label" destination="LpO-Bq-MCX" id="zLR-lQ-IUg"/>
+                        <outlet property="textView" destination="aSb-DH-pVL" id="Zco-P4-VKH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krP-WL-Nwv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

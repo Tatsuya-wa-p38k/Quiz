@@ -16,6 +16,7 @@
 		BB1BB6452BDA2F6700E8E2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1BB6432BDA2F6700E8E2B5 /* Main.storyboard */; };
 		BB1BB6472BDA2F6800E8E2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1BB6462BDA2F6800E8E2B5 /* Assets.xcassets */; };
 		BB1BB64A2BDA2F6800E8E2B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1BB6482BDA2F6800E8E2B5 /* LaunchScreen.storyboard */; };
+		BB6D19D52BEDC05B00BD761E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D19D42BEDC05B00BD761E /* ResultViewController.swift */; };
 		BBC2B4032BE9F56E004991FD /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B4022BE9F56E004991FD /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		BB1BB6462BDA2F6800E8E2B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB1BB6492BDA2F6800E8E2B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB1BB64B2BDA2F6800E8E2B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB6D19D42BEDC05B00BD761E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		BBC2B4022BE9F56E004991FD /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				BB0E924D2BECA36100B076BB /* QuizManager.swift */,
 				BB0E924B2BEC9E3B00B076BB /* Quiz.swift */,
 				BB0E92492BEC6E1300B076BB /* QuizCard.swift */,
+				BB6D19D42BEDC05B00BD761E /* ResultViewController.swift */,
 				BB1BB6432BDA2F6700E8E2B5 /* Main.storyboard */,
 				BB1BB6482BDA2F6800E8E2B5 /* LaunchScreen.storyboard */,
 				BB1BB6462BDA2F6800E8E2B5 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 				BB1BB6422BDA2F6700E8E2B5 /* ViewController.swift in Sources */,
 				BB1BB63E2BDA2F6700E8E2B5 /* AppDelegate.swift in Sources */,
 				BB0E924C2BEC9E3B00B076BB /* Quiz.swift in Sources */,
+				BB6D19D52BEDC05B00BD761E /* ResultViewController.swift in Sources */,
 				BB0E924E2BECA36100B076BB /* QuizManager.swift in Sources */,
 				BB1BB6402BDA2F6700E8E2B5 /* SceneDelegate.swift in Sources */,
 				BB0E924A2BEC6E1300B076BB /* QuizCard.swift in Sources */,
@@ -306,7 +310,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quiz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -333,7 +337,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quiz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
