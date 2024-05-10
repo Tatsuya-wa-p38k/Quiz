@@ -32,13 +32,76 @@ class QuizViewController: UIViewController {
         self.quizCard.quizImageView.image = UIImage(named:  manager.currentQuiz.imageName)
     }
 
+    func answer() {
+        //移動するCGAffineTransformオブジェクト(1)
+        var translationTransform: CGAffineTransform
+        //x軸方向の移動距離
+        let screenWidth = UIScreen.main.bounds.width
+        //y軸方向の移動距離
+        let y = UIScreen.main.bounds.height * 0.2
+
+        //回答によってtranslationTransformの内容を変える(2)
+        if self.quizCard.style == .right {
+            //○回答の時は右へ移動
+            translationTransform = CGAffineTransform(translationX:  screenWidth, y:  y)
+            self.manager.answerQuiz(answer: true)
+        } else {
+            //X回答の時は左へ移動
+            translationTransform = CGAffineTransform(translationX:  -screenWidth, y:  y)
+            self.manager.answerQuiz(answer: false)
+        }
+
+        //クイズカードのカードをアニメーションさせて移動する(3)
+        //0.1秒遅延させて0.5秒でカードを移動する
+        UIView.animate(withDuration: 0.5, delay: 0.1, options:  [.curveLinear],
+                       animations: {
+            //クイズのカードのtransformプロパティにtranslationTransformを設定
+            self.quizCard.transform = translationTransform
+        }, completion: { [unowned self] (finished) in
+            if finished {
+
+                self.showNextQuiz()
+                //transformプロパティに加えられた変更をリセットし、
+                //クイズのカードを元の位置に
+                self.quizCard.transform = CGAffineTransform.identity
+                //カードの状態を初期状態に
+                self.quizCard.style = .initial
+                //クイズを表示
+                self.loadQuiz()
+            }
+        })
+    }
+
+    func showNextQuiz() {
+        //次のクイズを取得
+        self.manager.nextQuiz()
+        //クイズに回答中か回答済みかで処理を分岐
+        //manager.statusって何だっけ？の場合
+        //右クリックしてjump to Difinittionで元の場所へ飛べる(どこで宣言したか)
+        switch manager.status {
+        case .inAnswer:
+            //transformプロパティに加えられた変更をリセットし、
+            //クイズのカードを元の位置に
+            self.quizCard.transform = CGAffineTransform.identity
+            //カードの状態を初期状態に
+            self.quizCard.style = .initial
+            //クイズを表示
+            self.loadQuiz()
+        case .done:
+            self.quizCard.isHidden = true
+            self.performSegue(withIdentifier: "goToResult", sender:  nil)
+        }
+    }
+
+
+
     @objc func dragQuizCard(_ sender:UIPanGestureRecognizer) {
 
         switch sender.state {
         case .began, .changed:
             self.transformQuizCard(gesture: sender)
         case .ended:
-            break
+            self.answer()
         default:
             break
         }
@@ -59,7 +122,18 @@ class QuizViewController: UIViewController {
         } else {
             self.quizCard.style = .wrong
         }
+    }
 
+    //画面遷移時に呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //セグエの遷移先が　ResultViewController　の場合
+        if let resultViewController: ResultViewController = segue.destination as?
+            ResultViewController {
+            //名前
+            resultViewController.nameText = self.nameText
+            //クイズのスコア
+            resultViewController.score = self.manager.score
+        }
     }
 
 }
