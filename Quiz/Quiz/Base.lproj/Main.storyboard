@@ -12,9 +12,17 @@
         <!--Navigation Controller-->
         <scene sceneID="8SZ-pv-B1U">
             <objects>
-                <navigationController navigationBarHidden="YES" id="moB-Bp-0Jm" sceneMemberID="viewController">
+                <navigationController id="moB-Bp-0Jm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0w0-qb-0Xt">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="normal background"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" name="right background"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XNC-Sk-DBR"/>
@@ -259,6 +267,9 @@
         </namedColor>
         <namedColor name="normal background">
             <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="right background">
+            <color red="0.0" green="0.53333333333333333" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="right color">
             <color red="0.0" green="0.53333333333333333" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
