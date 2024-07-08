@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  Quiz
-//
-//  Created by spark-06 on 2024/04/25.
-//
 
 import UIKit
 

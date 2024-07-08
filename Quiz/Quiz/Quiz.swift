@@ -1,9 +1,3 @@
-//
-//  Quiz.swift
-//  Quiz
-//
-//  Created by spark-06 on 2024/05/09.
-//
 
 import UIKit
 
