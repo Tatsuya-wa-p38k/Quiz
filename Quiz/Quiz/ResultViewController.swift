@@ -1,9 +1,3 @@
-//
-//  ResultViewController.swift
-//  Quiz
-//
-//  Created by spark-06 on 2024/05/10.
-//
 
 import UIKit
 
@@ -20,12 +14,10 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-
         self.label.text = "\(self.nameText)さん　あなたのスコアは\(self.score)です。"
 
-let numberOfQuizzes = quizManager.quizzes.count
+        let numberOfQuizzes = quizManager.quizzes.count
 
         var text = ""
         switch self.score {
@@ -40,7 +32,7 @@ let numberOfQuizzes = quizManager.quizzes.count
         default:
             break
         }
-        self.textView.text = text   
+        self.textView.text = text
     }
     
     @IBAction func pushResultButton(_ sender: Any) {

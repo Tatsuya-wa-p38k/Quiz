@@ -1,9 +1,3 @@
-//
-//  QuizViewController.swift
-//  Quiz
-//
-//  Created by spark-06 on 2024/05/07.
-//
 
 import UIKit
 
@@ -93,10 +87,7 @@ class QuizViewController: UIViewController {
         }
     }
 
-
-
     @objc func dragQuizCard(_ sender:UIPanGestureRecognizer) {
-
         switch sender.state {
         case .began, .changed:
             self.transformQuizCard(gesture: sender)
